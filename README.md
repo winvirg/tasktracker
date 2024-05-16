@@ -1,4 +1,4 @@
-# TaskMaster
+# TaskMaster versão 1.0
 
 Bem-vindo ao TaskMaster, um aplicativo simples de Lista de Tarefas para ajudá-lo a gerenciar suas tarefas diárias e aumentar sua produtividade!
 
