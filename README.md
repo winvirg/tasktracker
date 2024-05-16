@@ -26,5 +26,5 @@ O TaskMaster é uma aplicação web desenvolvida utilizando ReactJS e NodeJS. El
 # Recursos
 - Adicionar tarefas
 - Marcar tarefas como concluídas
-- Editar detalhes das tarefas
 - Excluir tarefas
+- Buscar tarefas
