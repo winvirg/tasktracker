@@ -1,0 +1,34 @@
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+p {
+    margin: 10px 0;
+}
+
+input {
+    box-sizing: border-box;
+}
+
+.complete {
+    background-color: #5cb85c;
+}
+
+.remove {
+    background-color: #d9535f;
+}
+
+.todo{
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

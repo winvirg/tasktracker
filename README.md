@@ -15,11 +15,11 @@ O TaskMaster é uma aplicação web desenvolvida utilizando ReactJS e NodeJS. El
    git clone https://github.com/seu-nome-de-usuario/taskmaster.git
 
 2. Instale as dependências:
-    `cd taskmaster`
+    `cd task-tracker`
     `npm install`
 
 3. Inicie o servidor:
-    `npm start`
+    `npm run dev`
 
 4. Acesse o aplicativo em seu navegador [com esse link](http://localhost:3000).
 
