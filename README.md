@@ -28,3 +28,4 @@ O TaskMaster é uma aplicação web desenvolvida utilizando ReactJS. Ele permite
 - Marcar tarefas como concluídas
 - Excluir tarefas
 - Buscar tarefas
+

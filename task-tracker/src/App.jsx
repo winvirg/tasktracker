@@ -4,6 +4,7 @@ import Todo from "./components/Todo";
 import TodoForm from "./components/TodoForm";
 import Search from "./components/Search";
 import Filter from "./components/Filter";
+import Header from "./components/Header";
 
 import "./App.css"
 
@@ -53,6 +54,7 @@ function App() {
 
   return (
     <div className="app">
+      <Header />
       <h1>Lista de tarefas</h1>
       <Search search={search} setSearch={setSearch}/>
       <Filter filter={filter} setFilter={setFilter} setSort={setSort}/>

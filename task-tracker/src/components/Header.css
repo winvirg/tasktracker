@@ -1,0 +1,22 @@
+.container {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.header {
+    padding-right: 10px;
+    margin-left: auto;
+    display: inline-flex;
+    justify-content: flex-end;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(15, 11, 11, 0.548);
+    border-radius: 50px;
+}
+
+.header h4 {
+    padding: 0 20px;
+}
+
+.header button {
+    height: 30px;
+}
