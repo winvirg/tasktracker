@@ -6,7 +6,7 @@ Bem-vindo ao TaskMaster, um aplicativo simples de Lista de Tarefas para ajudá-l
 
 ## Sobre o Projeto
 
-O TaskMaster é uma aplicação web desenvolvida utilizando ReactJS e NodeJS. Ele permite que os usuários adicionem, visualizem, editem e excluam tarefas de forma rápida e eficiente.
+O TaskMaster é uma aplicação web desenvolvida utilizando ReactJS. Ele permite que os usuários adicionem, visualizem, excluam tarefas de forma rápida e eficiente.
 
 ## Como Usar
 
