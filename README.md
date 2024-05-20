@@ -18,10 +18,15 @@ O TaskMaster é uma aplicação web desenvolvida utilizando ReactJS. Ele permite
    - `cd task-tracker`
    - `npm install`
    - `npm install react-router-dom`
+   - `npm install --save -D json-server`
 3. Inicie o servidor:
-    `npm run dev`
+   - `npm run dev`
+   - `npm run backend`
 
-4. Acesse o aplicativo em seu navegador [com esse link](http://localhost:3000).
+4. Acesse o aplicativo em seu navegador.
+
+5. Acesse os endpoints em :
+   - http://localhost:5000/todo
 
 # Recursos
 - Adicionar tarefas
