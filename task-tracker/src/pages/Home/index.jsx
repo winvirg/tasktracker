@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Todo from "../../components/Todo";
 import TodoForm from "../../components/TodoForm";
@@ -11,14 +11,16 @@ import { Link } from 'react-router-dom';
 import "../../App.css"
 
 function Home() {
-  const [todos, setTodos] = useState([
-    {
-        id: 1,
-        text: "Criar funcionalidade X do sistema",
-        category: "Trabalho",
-        isCompleted: false,
-    },
-  ]);
+  const [todos, setTodos] = useState([]);
+
+  useEffect(
+    () =>{
+      fetch('http://localhost:5000/todo')
+      .then((resp) => resp.json())
+      .then((resp) => setTodos(resp))
+      .catch((error) => console.log(error))
+    },[]
+  )
 
   const [search, setSearch] = useState("");
 
@@ -28,25 +30,15 @@ function Home() {
 
   const addTodo = (text, category) => {
     
-    const newTodos = [...todos,
-      {
-      id: Math.floor(Math.random() * 10000),
-      text,
-      category,
-      isCompleted: false,
-      },
-    ];
-
-    setTodos(newTodos);
+    
   };
 
   const removeTodo = (id) => {
-    const newTodos = [...todos]
-    const filteredTodos = newTodos.filter(todo => 
-      todo.id !== id ? todo : null);
-    
-    setTodos(filteredTodos);
+    fetch('http://localhost:5000/todo/${id}', {method: 'DELETE'})
+    .then(() => (window.location))
+    .catch((error) => console.log(error))
   }
+  
 
   const completeTodo = (id) => {
     const newTodos = [...todos]
@@ -58,10 +50,10 @@ function Home() {
     <div className="app">
       <Header />
       <h1>Lista de tarefas</h1>
-      <Search search={search} setSearch={setSearch}/>
-      <Filter filter={filter} setFilter={setFilter} setSort={setSort}/>
+      {/*<Search search={search} setSearch={setSearch}/>
+      <Filter filter={filter} setFilter={setFilter} setSort={setSort}/>*/}
       <div className="todo-list">
-        {todos
+        {/*{todos
         .filter((todo) => filter === "All" 
         ? true 
         : filter === "Completed" 
@@ -74,9 +66,19 @@ function Home() {
         : b.text.localeCompare(a.text))
         .map((todo) => (
           <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>
+        ))}*/}
+        
+        {todos.map((todo) =>(
+          <Todo
+            key={todo.id}
+            text={todo.text}
+            category={todo.category}
+            isCompleted={todo.isCompleted}
+            removeTodo={removeTodo}
+            completeTodo={completeTodo}/>
         ))}
       </div>
-      <TodoForm addTodo={addTodo}/>
+      {/*<TodoForm addTodo={addTodo}/>*/}
     </div>
   );
 }
