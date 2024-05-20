@@ -1,0 +1,10 @@
+.esqueci-container {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    background-color: #FFFF;
+}
+
+.esqueci-container button {
+    cursor: pointer;
+}

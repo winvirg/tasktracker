@@ -1,9 +1,8 @@
-// src/Login.js
 import React from 'react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import './Login.css'; // Para estilos adicionais
+import './Login.css'; 
 
 
 const Login = () => {
