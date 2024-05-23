@@ -5,6 +5,8 @@ import TodoForm from "../../components/TodoForm";
 import Search from "../../components/Search";
 import Filter from "../../components/Filter";
 import Header from "../../components/Header";
+import AdicionarTodo from "../../components/AddTodo";
+
 
 import { Link } from 'react-router-dom';
 
@@ -12,12 +14,13 @@ import "../../App.css"
 
 function Home() {
   const [todos, setTodos] = useState([]);
+  const [openAdd, setOpenAdd] = useState(0);
 
   useEffect(
     () =>{
       fetch('http://localhost:5000/todo')
-      .then((resp) => resp.json())
-      .then((resp) => setTodos(resp))
+      .then((response) => response.json())
+      .then((response) => setTodos(response))
       .catch((error) => console.log(error))
     },[]
   )
@@ -27,11 +30,6 @@ function Home() {
   const [filter, setFilter] = useState("All");
 
   const [sort, setSort] = useState("Asc");
-
-  const addTodo = (text, category) => {
-    
-    
-  };
 
   return (
     <div className="app">
@@ -54,14 +52,16 @@ function Home() {
         .map((todo) => (
           <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>
         ))}*/}
-        
+
         {todos.map((todo) =>(
           <Todo
             key={todo.id}
             todo={todo}/>
         ))}
+        { openAdd ?  <AdicionarTodo todo={todos}/> : ""}
+        
       </div>
-      {/*<TodoForm addTodo={addTodo}/>*/}
+      
     </div>
   );
 }

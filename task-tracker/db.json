@@ -1,16 +1,16 @@
 {
-    "todo": [
-        {
-            "id": 1,
-            "text": "ttttttrtt",
-            "category": "job", 
-            "isCompleted": false
-        },
-        {
-            "id": 2,
-            "text": "tajsdhakjsdh",
-            "category": "pessoal", 
-            "isCompleted": false
-        }
-    ]
+  "todo": [
+    {
+      "id": "1",
+      "text": "fazer autenticação",
+      "category": "pessoal",
+      "isCompleted": false
+    },
+    {
+      "id": "2",
+      "text": "login logout",
+      "category": "estudos",
+      "isCompleted": false
+    }
+  ]
 }
