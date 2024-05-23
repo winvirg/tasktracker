@@ -1,9 +1,15 @@
 {
     "todo": [
         {
-            "id":1,
-            "text":"ttttttrtt",
-            "category":"job", 
+            "id": 1,
+            "text": "ttttttrtt",
+            "category": "job", 
+            "isCompleted": false
+        },
+        {
+            "id": 2,
+            "text": "tajsdhakjsdh",
+            "category": "pessoal", 
             "isCompleted": false
         }
     ]

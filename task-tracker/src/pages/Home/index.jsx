@@ -33,19 +33,6 @@ function Home() {
     
   };
 
-  const removeTodo = (id) => {
-    fetch('http://localhost:5000/todo/${id}', {method: 'DELETE'})
-    .then(() => (window.location))
-    .catch((error) => console.log(error))
-  }
-  
-
-  const completeTodo = (id) => {
-    const newTodos = [...todos]
-    newTodos.map((todo) => todo.id === id ? todo.isCompleted = !todo.isCompleted : todo)
-    setTodos(newTodos);
-  }
-
   return (
     <div className="app">
       <Header />
@@ -71,11 +58,7 @@ function Home() {
         {todos.map((todo) =>(
           <Todo
             key={todo.id}
-            text={todo.text}
-            category={todo.category}
-            isCompleted={todo.isCompleted}
-            removeTodo={removeTodo}
-            completeTodo={completeTodo}/>
+            todo={todo}/>
         ))}
       </div>
       {/*<TodoForm addTodo={addTodo}/>*/}

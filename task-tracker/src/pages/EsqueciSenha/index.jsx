@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const EsqueciSenha = () => {
 
-
   return (
     <div className='esqueci-container'>
       <div className='form-recuperar'>
