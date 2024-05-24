@@ -27,6 +27,13 @@
       "category": "Trabalho",
       "user_id": "2",
       "isCompleted": false
+    },
+    {
+      "id": "bf1f",
+      "text": "fazer logica chave",
+      "category": "Trabalho",
+      "user_id": {},
+      "isCompleted": false
     }
   ],
   "users": [

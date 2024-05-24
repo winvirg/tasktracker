@@ -29,6 +29,8 @@ function Home() {
     },[]
   )
 
+  
+
   if(!user){
     return(
       <div className="app">
@@ -46,7 +48,8 @@ function Home() {
         {todos.map((todo) =>(
           <Todo
             key={todo.id}
-            todo={todo}/>
+            todo={todo}
+            user_id={user.id}/>
         ))}
         { open ?  <ModalEdit open={open} setOpen={setOpen} nameBtn="Criar"/> : ""}
         <button onClick={()=> setOpen(true)}>Criar tarefa</button>
