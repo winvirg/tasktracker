@@ -3,7 +3,7 @@
     {
       "id": "1",
       "text": "fazer autenticação",
-      "category": "Pessoal",
+      "category": "Estudos",
       "isCompleted": false
     },
     {
@@ -17,6 +17,26 @@
       "text": "terminar adicionar",
       "category": "Trabalho",
       "isCompleted": false
+    },
+    {
+      "id": "d1d8",
+      "text": "fazer login",
+      "category": "Trabalho",
+      "isCompleted": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "nome": "Thiago Winvirg",
+      "email": "thiagowinvirg@gmail.com",
+      "password": "4321"
+    },
+    {
+      "id": "2",
+      "nome": "Isack Lopes",
+      "email": "isacklopes@gmail.com",
+      "password": "1234"
     }
   ]
 }

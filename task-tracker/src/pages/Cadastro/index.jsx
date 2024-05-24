@@ -1,6 +1,5 @@
-// src/Cadastro.js
 import { useState } from 'react';
-import './Cadastro.css'; // Para estilos adicionais
+import './Cadastro.css'; 
 import { Link } from 'react-router-dom';
 
 const Cadastro = () => {

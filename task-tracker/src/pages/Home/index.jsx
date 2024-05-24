@@ -1,22 +1,24 @@
 import { useState, useEffect } from "react";
+import { useLocation} from "react-router-dom";
 
 import Todo from "../../components/Todo";
-import TodoForm from "../../components/TodoForm";
-import Search from "../../components/Search";
-import Filter from "../../components/Filter";
 import Header from "../../components/Header";
 import ModalEdit from "../../components/modalEdit";
-
-
-import { Link } from 'react-router-dom';
 
 import "../../App.css"
 
 function Home() {
-  const [todos, setTodos] = useState([]);
-  const [openAdd, setOpenAdd] = useState(0);
-  const [open, setOpen] = useState(false);
 
+  //Usuario
+  const [currentUser, setCurrentUser] = useState();
+  const [newUser, setNewUser] = useState([]);
+  const location = useLocation();
+  const { state: {user}} = location;
+
+
+  //Todos
+  const [todos, setTodos] = useState([]);
+  const [open, setOpen] = useState(false);
 
   useEffect(
     () =>{
@@ -26,35 +28,12 @@ function Home() {
       .catch((error) => console.log(error))
     },[]
   )
-
-  const [search, setSearch] = useState("");
-
-  const [filter, setFilter] = useState("All");
-
-  const [sort, setSort] = useState("Asc");
-
+if (user != null){
   return (
     <div className="app">
-      <Header />
+      <Header key={user.id} user={user}/>
       <h1>Lista de tarefas</h1>
-      {/*<Search search={search} setSearch={setSearch}/>
-      <Filter filter={filter} setFilter={setFilter} setSort={setSort}/>*/}
       <div className="todo-list">
-        {/*{todos
-        .filter((todo) => filter === "All" 
-        ? true 
-        : filter === "Completed" 
-        ? todo.isCompleted
-        : !todo.isCompleted)
-        .filter((todo) => 
-        todo.text.toLowerCase().includes(search.toLocaleLowerCase()))
-        .sort((a, b) => sort==="Asc" 
-        ? a.text.localeCompare(b.text) 
-        : b.text.localeCompare(a.text))
-        .map((todo) => (
-          <Todo key={todo.id} todo={todo} removeTodo={removeTodo} completeTodo={completeTodo}/>
-        ))}*/}
-
         {todos.map((todo) =>(
           <Todo
             key={todo.id}
@@ -67,6 +46,13 @@ function Home() {
       
     </div>
   );
+} return (
+  <div className="app">
+    <h1>Voce precisa logar</h1>
+    <Link to="/"><button>Login</button></Link>
+  </div>
+)
+
 }
 
 export default Home;

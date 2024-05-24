@@ -1,12 +1,18 @@
 import "./Header.css"
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
-function Header() {
+const Header = ({ user} ) => {
+  const navigate = useNavigate();
+
+  const handleLoggout = () => {
+    navigate('/', { state: {user} })
+  }
+
   return (
     <div className="container">
         <div className="header">
-            <h4>Isack Lopes</h4>
-            <button><Link to="/">Sair</Link></button>
+            <h4>{user.nome}</h4>
+            <button onClick={handleLoggout()}>Sair</button>
         </div>
     </div>
   )
