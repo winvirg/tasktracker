@@ -5,7 +5,7 @@ import TodoForm from "../../components/TodoForm";
 import Search from "../../components/Search";
 import Filter from "../../components/Filter";
 import Header from "../../components/Header";
-import AdicionarTodo from "../../components/AddTodo";
+import ModalEdit from "../../components/modalEdit";
 
 
 import { Link } from 'react-router-dom';
@@ -15,6 +15,8 @@ import "../../App.css"
 function Home() {
   const [todos, setTodos] = useState([]);
   const [openAdd, setOpenAdd] = useState(0);
+  const [open, setOpen] = useState(false);
+
 
   useEffect(
     () =>{
@@ -58,7 +60,8 @@ function Home() {
             key={todo.id}
             todo={todo}/>
         ))}
-        { openAdd ?  <AdicionarTodo todo={todos}/> : ""}
+        { open ?  <ModalEdit open={open} setOpen={setOpen} nameBtn="Criar"/> : ""}
+        <button onClick={()=> setOpen(true)}>Criar tarefa</button>
         
       </div>
       

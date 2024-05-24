@@ -3,13 +3,19 @@
     {
       "id": "1",
       "text": "fazer autenticação",
-      "category": "pessoal",
+      "category": "Pessoal",
       "isCompleted": false
     },
     {
       "id": "2",
       "text": "login logout",
-      "category": "estudos",
+      "category": "Estudos",
+      "isCompleted": false
+    },
+    {
+      "id": "dab5",
+      "text": "terminar adicionar",
+      "category": "Trabalho",
       "isCompleted": false
     }
   ]

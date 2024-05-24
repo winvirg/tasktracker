@@ -34,7 +34,7 @@ const Todo = ({ todo }) => {
             <div>
                 <button className="complete" onClick={ () => completeTodo(todo.id) }>Completar</button>
                 <button className="remove" onClick={ () => removeTodo(todo.id) }>x</button>
-                { open ?  <ModalEdit open={open} setOpen={setOpen} id={todoId}/> : ""}
+                { open ?  <ModalEdit open={open} setOpen={setOpen} id={todoId} nameBtn="Editar"/> : ""}
                 <button onClick={() => handleEdit(todo.id)}>Editar tarefa</button>
             </div>
         </div>

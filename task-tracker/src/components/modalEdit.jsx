@@ -3,9 +3,9 @@ import styles from './ModalEdit.module.css';
 
 export default function ModalEdit(props) {
 
-    console.log(props.id);
-
     const id = props.id;
+
+    let metodo = id ? "PUT" : "POST";
 
     const [uniqueTodo, setUniqueTodo] = useState({
         id: props.id,
@@ -35,8 +35,8 @@ export default function ModalEdit(props) {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        fetch(`http://localhost:5000/todo/${id}`,{
-            method: "PUT",
+        fetch(`http://localhost:5000/todo/${ id ? id: ""}`,{
+            method: metodo,
             headers: {
                 "Content-Type": "application/json"
             },
@@ -67,11 +67,11 @@ export default function ModalEdit(props) {
                         onChange={handleChange}
                         >
                             <option>{uniqueTodo.category}</option>
-                            <option value="trabalho">Trabalho</option>
-                            <option value="pessoal">Pessoal</option>
-                            <option value="estudos">Estudos</option>
+                            <option value="Trabalho">Trabalho</option>
+                            <option value="Pessoal">Pessoal</option>
+                            <option value="Estudos">Estudos</option>
                         </select>
-                        <button >Editar</button>
+                        <button >{props.nameBtn}</button>
                         <button onClick={() => props.setOpen(0)}>Cancelar</button>
                     </form>
                 </div>
