@@ -13,7 +13,7 @@ const Todo = ({ todo, user_id }) => {
     }
 
     const removeTodo = async (id) => {
-        fetch(`localhost:5000/todo/${id}`, {method: 'DELETE'})
+        fetch(`http://localhost:5000/todo/${id}`, {method: 'DELETE'})
         .then(() => (window.location = '/home'))
         .catch((error) => console.log(error))
     }
