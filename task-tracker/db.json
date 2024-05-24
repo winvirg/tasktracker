@@ -4,24 +4,28 @@
       "id": "1",
       "text": "fazer autenticação",
       "category": "Estudos",
+      "user_id": "1",
       "isCompleted": false
     },
     {
       "id": "2",
       "text": "login logout",
       "category": "Estudos",
+      "user_id": "1",
       "isCompleted": false
     },
     {
       "id": "dab5",
       "text": "terminar adicionar",
       "category": "Trabalho",
+      "user_id": "2",
       "isCompleted": false
     },
     {
       "id": "d1d8",
       "text": "fazer login",
       "category": "Trabalho",
+      "user_id": "2",
       "isCompleted": false
     }
   ],

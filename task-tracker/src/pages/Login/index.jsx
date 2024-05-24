@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import usersData from '../../../db.json';
 
@@ -9,7 +9,7 @@ import './Login.css';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [currentUser, setCurrentUser] = useState('')
+  const [currentUser, setCurrentUser] = useState(null)
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
@@ -17,11 +17,15 @@ const Login = () => {
     const user = usersData.users.find(u => u.email === email && u.password === password);
     if(user) {
       setCurrentUser(user);
-      navigate('/home', { state: {user} })
+      navigate('/home', { state: {user, currentUser} })
     } else{
         alert(' Email ou senha incorreto ')
     }
   }
+  
+  useEffect(() => {
+    console.log(currentUser);
+  }, [currentUser]);
 
   return (
     <div className="login-container">

@@ -1,18 +1,21 @@
 import "./Header.css"
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 
-const Header = ({ user} ) => {
+const Header = ( ) => {
   const navigate = useNavigate();
 
+  const {state} = useLocation()
+  const user = state ? state.user : null;
+
   const handleLoggout = () => {
-    navigate('/', { state: {user} })
+    navigate('/');
   }
 
   return (
     <div className="container">
         <div className="header">
             <h4>{user.nome}</h4>
-            <button onClick={handleLoggout()}>Sair</button>
+            <button onClick={handleLoggout}>Sair</button>
         </div>
     </div>
   )

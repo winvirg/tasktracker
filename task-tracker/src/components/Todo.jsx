@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import "./Todo.css"
 import ModalEdit from "../components/modalEdit";
 
-const Todo = ({ todo }) => {
+const Todo = ({ todo, user_id }) => {
 
     const [open, setOpen] = useState(false);
     const [todoId, setTodoId] = useState(0);
@@ -18,11 +18,21 @@ const Todo = ({ todo }) => {
         .catch((error) => console.log(error))
     }
 
-    const completeTodo = (id) => {
-        const newTodos = [...todo]
-        newTodos.map((todo) => todo.id === id ? todo.isCompleted = !todo.isCompleted : todo)
-        setTodos(newTodos);
-    }
+    {/*const completeTodo = (todo, id) => {
+        fetch(`http://localhost:5000/todo/${id}`)
+        .then(todo => {
+            todo.isCompleted = true;
+            return  fetch(`http://localhost:5000/todo/${id}`,{
+                        method: "PUT",
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(todo)
+                    })
+        })
+        .then(() => (window.location))
+        .catch((error) => console.log(error));
+    }*/}
     
     return(
         <div className="todo" 
@@ -32,9 +42,9 @@ const Todo = ({ todo }) => {
                 <p className="category">{todo.category}</p>
             </div>
             <div>
-                <button className="complete" onClick={ () => completeTodo(todo.id) }>Completar</button>
+                <button className="complete" onClick={ () => completeTodo(todo, todo.id) }>Completar</button>
                 <button className="remove" onClick={ () => removeTodo(todo.id) }>x</button>
-                { open ?  <ModalEdit open={open} setOpen={setOpen} id={todoId} nameBtn="Editar"/> : ""}
+                { open ?  <ModalEdit open={open} setOpen={setOpen} id={todoId} nameBtn="Editar" completeTodo={completeTodo}/> : ""}
                 <button onClick={() => handleEdit(todo.id)}>Editar tarefa</button>
             </div>
         </div>

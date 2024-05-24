@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useLocation} from "react-router-dom";
+import { useLocation, useNavigate, Link} from "react-router-dom";
 
 import Todo from "../../components/Todo";
 import Header from "../../components/Header";
@@ -9,11 +9,11 @@ import "../../App.css"
 
 function Home() {
 
+  const navigate = useNavigate();
+
   //Usuario
-  const [currentUser, setCurrentUser] = useState();
-  const [newUser, setNewUser] = useState([]);
-  const location = useLocation();
-  const { state: {user}} = location;
+  const {state} = useLocation()
+  const user = state ? state.user : null;
 
 
   //Todos
@@ -28,10 +28,19 @@ function Home() {
       .catch((error) => console.log(error))
     },[]
   )
-if (user != null){
+
+  if(!user){
+    return(
+      <div className="app">
+        <h1>Voce precisa fazer Login</h1>
+        <Link to='/'><button>Logar</button></Link>
+      </div>
+    )
+  }
+
   return (
     <div className="app">
-      <Header key={user.id} user={user}/>
+      <Header key={user.id} user={user} />
       <h1>Lista de tarefas</h1>
       <div className="todo-list">
         {todos.map((todo) =>(
@@ -46,12 +55,6 @@ if (user != null){
       
     </div>
   );
-} return (
-  <div className="app">
-    <h1>Voce precisa logar</h1>
-    <Link to="/"><button>Login</button></Link>
-  </div>
-)
 
 }
 
