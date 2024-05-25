@@ -19,7 +19,7 @@ const Cadastro = (props) => {
         }
     })
     .then((response) => response.json())
-    .then((response) => setUsers(response))
+    .then((response) => setUser(response))
     .catch(error => console.log(error));
 },[])
 

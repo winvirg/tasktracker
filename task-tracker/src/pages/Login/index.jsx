@@ -49,7 +49,7 @@ const Login = () => {
           />
         </div>
         <button type="submit" className="login-button">Login</button>
-        <Link to="/cadastro"><button type="submit" className="login-button">Cadastre-se</button></Link>
+        <Link to="/cadastro"><button className="login-button">Cadastre-se</button></Link>
         <Link to="/esqueciSenha">Esqueci minha senha</Link>
       </form>
     </div>
