@@ -1,24 +1,10 @@
 {
   "todo": [
     {
-      "id": "1",
-      "text": "fazer autenticação xg",
-      "category": "Trabalho",
-      "user_id": "1",
-      "isCompleted": false
-    },
-    {
       "id": "2",
-      "text": "login logout",
-      "category": "Estudos",
+      "text": "NOTAS",
+      "category": "Pessoal",
       "user_id": "1",
-      "isCompleted": false
-    },
-    {
-      "id": "dab5",
-      "text": "terminar adicionar",
-      "category": "Trabalho",
-      "user_id": "2",
       "isCompleted": false
     },
     {
@@ -34,6 +20,27 @@
       "category": "Trabalho",
       "user_id": {},
       "isCompleted": false
+    },
+    {
+      "id": "9de6",
+      "text": "01",
+      "category": "Trabalho",
+      "user_id": "",
+      "isCompleted": false
+    },
+    {
+      "id": "4ef1",
+      "text": "teste",
+      "category": "Pessoal",
+      "user_id": "1",
+      "isCompleted": false
+    },
+    {
+      "id": "90d0",
+      "text": "teste",
+      "category": "Pessoal",
+      "user_id": "2",
+      "isCompleted": false
     }
   ],
   "users": [
@@ -48,6 +55,12 @@
       "nome": "Isack Lopes",
       "email": "isacklopes@gmail.com",
       "password": "1234"
+    },
+    {
+      "id": "83ed",
+      "nome": "Luana",
+      "email": "luanaoliveiramm1@gmail.com",
+      "password": "1234luana"
     }
   ]
 }

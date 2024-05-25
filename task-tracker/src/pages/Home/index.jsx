@@ -29,6 +29,10 @@ function Home() {
     },[]
   )
 
+  useEffect(() => {
+    console.log(user);
+  }, [user]);
+
   
 
   if(!user){
@@ -45,13 +49,14 @@ function Home() {
       <Header key={user.id} user={user} />
       <h1>Lista de tarefas</h1>
       <div className="todo-list">
-        {todos.map((todo) =>(
+        {todos.filter(todo => todo.user_id === user.id).map(filteredTodo => (
           <Todo
-            key={todo.id}
-            todo={todo}
-            user_id={user.id}/>
+            key={filteredTodo.id}
+            todo={filteredTodo}
+            user_id={user.id}
+          />
         ))}
-        { open ?  <ModalEdit open={open} setOpen={setOpen} nameBtn="Criar"/> : ""}
+        { open ?  <ModalEdit open={open} setOpen={setOpen} user_id={user.id} nameBtn="Criar"/> : ""}
         <button onClick={()=> setOpen(true)}>Criar tarefa</button>
         
       </div>

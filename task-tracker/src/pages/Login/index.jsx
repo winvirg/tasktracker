@@ -17,15 +17,12 @@ const Login = () => {
     const user = usersData.users.find(u => u.email === email && u.password === password);
     if(user) {
       setCurrentUser(user);
-      navigate('/home', { state: {user, currentUser} })
+      navigate('/home', { state: {user} })
     } else{
         alert(' Email ou senha incorreto ')
     }
   }
   
-  useEffect(() => {
-    console.log(currentUser);
-  }, [currentUser]);
 
   return (
     <div className="login-container">

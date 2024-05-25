@@ -1,14 +1,17 @@
+import { useState } from "react";
 import "./Header.css"
 import { useNavigate, useLocation } from 'react-router-dom';
 
-const Header = ( ) => {
+const Header = () => {
   const navigate = useNavigate();
 
   const {state} = useLocation()
-  const user = state ? state.user : null;
+  let user = state ? state.user : null;
 
   const handleLoggout = () => {
-    navigate('/');
+    user = null;
+    navigate('/', {state: {user}});
+    console.log(user);
   }
 
   return (

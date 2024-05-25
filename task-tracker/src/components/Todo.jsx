@@ -45,7 +45,7 @@ const Todo = ({ todo, user_id }) => {
                 <p className="category">{todo.category}</p>
             </div>
             <div>
-                <button className="complete" onClick={ () => completeTodo(todo, todo.id) }>Completar</button>
+                <button className="complete" >Completar</button>
                 <button className="remove" onClick={ () => removeTodo(todo.id) }>x</button>
                 { open ?  <ModalEdit open={open} setOpen={setOpen} id={todoId} user_id={user_id} nameBtn="Editar"/> : ""}
                 <button onClick={() => handleEdit(todo.id)}>Editar tarefa</button>

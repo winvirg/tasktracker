@@ -11,7 +11,7 @@ export default function ModalEdit(props) {
         id: props.id,
         text: "",
         category: "",
-        user_id: user_id,
+        user_id: props.user_id,
         isCompleted: false
     });
 
@@ -47,10 +47,6 @@ export default function ModalEdit(props) {
         .catch((error) => console.log(error));
         props.setOpen(0)
     };
-
-    useEffect(() =>{
-        console.log(user_id)
-      })
 
     if(props.open[0] != 0){
         return(
