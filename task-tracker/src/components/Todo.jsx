@@ -18,21 +18,18 @@ const Todo = ({ todo, user_id }) => {
         .catch((error) => console.log(error))
     }
 
-    {/*const completeTodo = (todo, id) => {
-        fetch(`http://localhost:5000/todo/${id}`)
-        .then(todo => {
-            todo.isCompleted = true;
-            return  fetch(`http://localhost:5000/todo/${id}`,{
-                        method: "PUT",
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(todo)
-                    })
-        })
-        .then(() => (window.location))
-        .catch((error) => console.log(error));
-    }*/}
+    const completeTodo = (id, isCompleted) => {
+        fetch(`http://localhost:5000/todo/${id}`, {
+          method: "PUT",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({...todo,
+            isCompleted: !isCompleted})
+          })
+        .then(() => window.location = '/home')
+        .catch((error) => console.log(error))
+    }
 
     
 
@@ -45,11 +42,12 @@ const Todo = ({ todo, user_id }) => {
                 <p className="category">{todo.category}</p>
             </div>
             <div>
-                <button className="complete" >Completar</button>
+                <button className="complete" onClick={() => completeTodo(todo.id, todo.isCompleted)}>Completar</button>
                 <button className="remove" onClick={ () => removeTodo(todo.id) }>x</button>
                 { open ?  <ModalEdit open={open} setOpen={setOpen} id={todoId} user_id={user_id} nameBtn="Editar"/> : ""}
                 <button onClick={() => handleEdit(todo.id)}>Editar tarefa</button>
             </div>
+            
         </div>
 )}
 
