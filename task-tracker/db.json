@@ -1,0 +1,52 @@
+{
+  "todo": [
+    {
+      "id": "2",
+      "text": "NOTAS",
+      "category": "Pessoal",
+      "user_id": "1",
+      "isCompleted": false
+    },
+    {
+      "id": "d1d8",
+      "text": "fazer login",
+      "category": "Trabalho",
+      "user_id": "2",
+      "isCompleted": false
+    },
+    {
+      "id": "4ef1",
+      "text": "teste",
+      "category": "Pessoal",
+      "user_id": "1",
+      "isCompleted": false
+    },
+    {
+      "id": "90d0",
+      "text": "teste",
+      "category": "Pessoal",
+      "user_id": "2",
+      "isCompleted": false
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "nome": "Thiago Winvirg",
+      "email": "thiagowinvirg@gmail.com",
+      "password": "12345"
+    },
+    {
+      "id": "2",
+      "nome": "Isack Lopes",
+      "email": "isacklopes@gmail.com",
+      "password": "1234"
+    },
+    {
+      "id": "83ed",
+      "nome": "Luana",
+      "email": "luanaoliveiramm1@gmail.com",
+      "password": "1234luana"
+    }
+  ]
+}
